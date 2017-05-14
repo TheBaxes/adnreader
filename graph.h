@@ -14,12 +14,18 @@ class Graph {
   string getString();
 
  private:
-  void calculatePath();
   vector<string> chop(string);
+  void calculatePath();
   
   int kmers;
   int nodeAmount;
+  int nsemi;
+  int nbal;
+  int nneither;
+  int head;
+  int tail;
   map<string, int> nodes;
+  map<int, string> reverseNodes;
   map<int, pair<int, int> > nodesData;
   vector< vector<int> > graph;
 };
