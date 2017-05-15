@@ -16,7 +16,7 @@ class Graph {
  private:
   vector<string> chop(string);
   bool calculatePath();
-  void eulerPath(int, vector<int>&, map<int, bool>&);
+  void eulerPath(int, vector<int>&, vector<bool>&);
   
   int kmers;
   int nodeAmount;

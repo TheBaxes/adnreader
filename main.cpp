@@ -62,7 +62,7 @@ int main(int argc, char** argv) {
 	//cout << graph.getString().size() << endl;
       }
     }
-    cout << graph.getString() << endl;
+    cout << graph.getString().length() << endl;
   }
   
   while(read.readLine()) {

@@ -1,7 +1,7 @@
 #include <string>
 #include <vector>
 #include <iostream>
-#include "pew.h"
+#include "gen.h"
 
 
 using namespace std;
@@ -27,7 +27,4 @@ void Gen::leergenes(string str){
       gen = "";
     }
   }
-}
-int main(){
-  return 0;
 }
