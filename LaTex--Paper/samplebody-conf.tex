@@ -1,0 +1,50 @@
+\section{Introduction}
+
+How do antibiotics work? Where do virus come from? What is a mutation? Can we clone people? The human kind had been studying biology for a long time but without the help of technology the revolution of the field could have been impossible. Thanks to the convergence of computation and biology, we have improved the genetic analysis discovering patterns in the genomics sequences.
+
+The reconstruction of DNA expressions is still a significant problem in biology, and to do so firstly is needed to find all the overlapping sequences, then we can proceed to the rearrangement and reconstruction of the DNA, in order to identify from what specie do the reconstructed sequence come from.
+
+To that end, we've come to a solution using a de Bruijn graph to represent a sequence in terms of its k-mer components and with the Eulerian path we are able find the overlapping sequences.
+
+\section{The problem}
+Every organism or living being is unique, all of them having several differences from each other, but they also have some things in common that allow us to studying them better by classifying them in certain groups, so to identify them there are certain genome sequences that define the specie. The main purpose of our project is from a collections of DNA fragments resequencing and assembling them to determine the belonging specie of the organism from the given DNA sequences.
+
+\section{Algorithm}
+\subsection{Usage}
+The program is executed by command line, the first step is to insert the strings and it'll keep reading until EOF (end of file).
+\subsection{Average time and memory}
+The average execution time is \textbf{30} seconds.
+
+The memory used is \textbf{15.6} mb.
+\subsection{Complexity analysis}
+Our solution takes a time
+$O(N\times \lvert S \lvert + \lvert E \lvert + \lvert G \lvert)$.
+\begin{itemize}
+  \item Being $N$ the number of strings received.
+  \item Being $\lvert S \lvert$ the average string length. 
+  \item Being $\lvert E \lvert$ the final amount of edges in the graph.
+  \item Being $\lvert G \lvert$ the final length of the resulting genome.
+\end{itemize}
+
+
+
+
+%\end{document}  % This is where a 'short' article might terminate
+
+\section{RELATED WORKS}
+\subsection{Longest common substring problem}
+The longest common substring problem is a computer science problem in which the longest substring that two or more strings have in common needs to be found.
+
+There are many solutions for this problem. The simpler one consists in comparing one by one all of the substrings from any of the given strings to check if it is a substring of any of the other strings and then determine which one of these is the longest.
+
+Another solution is parsing the strings with a suffix tree and \textit{“finding the deepest internal nodes which have leaf nodes from all the strings in the subtree below it.”}
+
+This problem can also be solved by using DP (Dynamic programming), finding which of the common suffix for all pairs of prefixes of the strings has the maximum length. The maximal of these longest common suffixes of possible prefixes must be the longest common substrings.
+
+\subsection{Sequence alignment}
+\textit{“In bioinformatics, a sequence alignment is a way of arranging the sequences of DNA, RNA, or protein to identify regions of similarity that may be a consequence of functional, structural, or evolutionary relationships between the sequences”}
+This problem can be solved by the application of a variety of algorithms, so this problem has no specific solution since it can be solved by the mixture of methods and optimizations of these. An example of these algorithms and methods are DP, probabilistic or heuristic methods, etc.
+
+\subsection{String searching for literature}
+We usually need to find a specific word in an essay, chronicle or any other document with a big amount of text, that’s why engineers always try to develop every time an efficient way to satisfy this need. Here we have an example of a searching algorithm used usually for this kind of problems. 
+This is the Boyer–Moore string search algorithm that was developed by Robert S. Boyer and J Strother Moore at the end of the seventies,4 this algorithm doesn’t search every character of the string, but uses a set of rules in order to minimize the time spend on the search.

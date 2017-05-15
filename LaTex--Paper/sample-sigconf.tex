@@ -1,0 +1,100 @@
+%%%% Proceedings format for most of ACM conferences (with the exceptions listed below) and all ICPS volumes.
+\documentclass[sigconf]{acmart}
+%%%% As of March 2017, [siggraph] is no longer used. Please use sigconf (above) for SIGGRAPH conferences.
+
+%%%% Proceedings format for SIGPLAN conferences 
+% \documentclass[sigplan, anonymous, review]{acmart}
+
+%%%% Proceedings format for SIGCHI conferences
+% \documentclass[sigchi, review]{acmart}
+
+%%%% To use the SIGCHI extended abstract template, please visit
+% https://www.overleaf.com/read/zzzfqvkmrfzn
+
+\usepackage{booktabs} % For formal tables
+\usepackage[utf8]{inputenc}
+\usepackage{balance}
+
+
+% Copyright
+\setcopyright{none}
+%\setcopyright{acmcopyright}
+%\setcopyright{acmlicensed}
+%setcopyright{rightsretained}
+%\setcopyright{usgov}
+%\setcopyright{usgovmixed}
+%\setcopyright{cagov}
+%\setcopyright{cagovmixed}
+
+% DOI
+\acmDOI{xx.xxx/xxx_x}
+
+% ISBN
+\acmISBN{xxx-xxxx-xx-xxx/xx/xx}
+
+%Conference
+\acmConference[Universidad Eafit]{}{May 2017}{Antioquia, Colombia}
+
+\acmYear{2017}
+\acmPrice{0.00}
+
+\begin{document}
+\title{A method for reconstructing DNA using a list of smaller DNA sequences}
+%\titlenote{Produces the permission block, and
+%  copyright information}
+%\subtitle{Extended Abstract}
+%\subtitlenote{The full version of the author's guide is available as
+%  \texttt{acmart.pdf} document}
+
+\author{Sebastián Patiño Barrientos}
+\affiliation{%
+  \institution{Universidad Eafit}
+  \country{Colombia} 
+}
+\email{spatino6@eafit.edu.co}
+
+\author{Luis Miguel Arroyave Quiñones}
+\affiliation{%
+  \institution{Universidad Eafit}
+  \country{Colombia} 
+}
+\email{larroy13@eafit.edu.co}
+
+\author{Juan José Jaramillo Castaño}
+\affiliation{%
+  \institution{Universidad Eafit}
+  \country{Colombia} 
+}
+\email{jujara40@eafit.edu.co}
+
+\author{Mauricio Toro}
+\affiliation{%
+  \institution{Universidad Eafit}
+  \country{Colombia} 
+}
+\email{mtorobe@eafit.edu.co}
+
+\renewcommand{\shortauthors}{S. Patiño, Luis M. Arroyave, JJ. Jaramillo, M. Toro}
+
+
+\begin{abstract}
+The idea of making optimal and each time better solutions to the problems that affect the humanity has been at the top goals of our generation, especially in the fields of computations and development of algorithms, as a record of that, we have the Needleman–Wunsch algorithm one of the first DP (dynamic programming) algorithms used in bioinformatics and computational genomics. Having said that, we can present the goal of this paper which is present an algorithmic solution to the problem of DNA sequence reconstruction using a collection of fragments and determine to which specie is it from.
+\end{abstract}
+
+%% Used in some conference proceedings e.g. sigplan and sigchi
+% \begin{teaserfigure}
+%   \includegraphics[width=\textwidth]{sampleteaser}
+%   \caption{This is a teaser}
+%   \label{fig:teaser}
+% \end{teaserfigure}
+
+\maketitle
+
+\input{samplebody-conf}
+
+\nocite{*}
+\bibliographystyle{ACM-Reference-Format}
+\balance
+\bibliography{sigproc} 
+
+\end{document}
