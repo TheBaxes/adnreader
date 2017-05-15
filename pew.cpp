@@ -1,5 +1,7 @@
 #include <string>
 #include <iostream>
+#include "pew.h"
+
 
 using namespace std;
 
@@ -9,7 +11,7 @@ void Gen::leergenes(string str){
   bool flag = false;
   string gen = "";
   for(int i = 0; i < str.length()-2; ++i){
-    string codon = res.substr(i,i+3);
+    string codon = str.substr(i,i+3);
     if(codon == "ATG" or codon == "ATA"){
       flag = true;
     }
