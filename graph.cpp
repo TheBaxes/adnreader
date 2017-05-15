@@ -120,4 +120,3 @@ void Graph::eulerPath(int n, vector<int>& circuit, map<int, bool>& visited) {
   }
   circuit.push_back(n);
 }
-
