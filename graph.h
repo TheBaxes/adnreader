@@ -11,11 +11,12 @@ class Graph {
   ~Graph();
 
   void addString(string);
-  string getString();
+  string getString(bool = true);
 
  private:
   vector<string> chop(string);
-  void calculatePath();
+  bool calculatePath();
+  void eulerPath(int, vector<int>&, map<int, bool>&);
   
   int kmers;
   int nodeAmount;
@@ -24,8 +25,10 @@ class Graph {
   int nneither;
   int head;
   int tail;
+  bool pathFound;
   map<string, int> nodes;
   map<int, string> reverseNodes;
   map<int, pair<int, int> > nodesData;
-  vector< vector<int> > graph;
+  vector< map<int, int> > graph;
+  vector<int> path;
 };
