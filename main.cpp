@@ -1,6 +1,7 @@
 #include <getopt.h>
 #include "graph.h"
 #include "scanner.h"
+#include "gen.h"
 #include <string>
 
 #include <iostream>
@@ -9,7 +10,7 @@ using namespace std;
 
 int main(int argc, char** argv) {
   int avglength = 17000;
-  int goal = 100;
+  int goal = 1000;
   double avgcov = 0.6;
   int segments = 0;
   char c;
@@ -18,16 +19,13 @@ int main(int argc, char** argv) {
   int kmers = 201;
   bool test = false;
   
-  while((c = getopt(argc, argv, "c:l:f:k:t")) != -1) {
+  while((c = getopt(argc, argv, "g:f:k:t")) != -1) {
     string val;
     switch (c) {
-      case 'c':
+      case 'g':
 	val = optarg;
-	avgcov = stof(val);
+        goal = stoi(val);
 	break;
-      case 'l':
-	val = optarg;
-	avglength = stoi(val);
       case 'f':
 	file = true;
 	filedir = optarg;
@@ -41,6 +39,7 @@ int main(int argc, char** argv) {
 	break;
       default:
 	abort();
+	break;
     }
   }
 
@@ -50,16 +49,23 @@ int main(int argc, char** argv) {
   if (file) new (&read) Scanner(filedir);
 
   Graph graph(kmers);
+  Gen genes;
 
   if (test && file) {
-    int finallength;
-    read.readLine();
-    finallength = stoi(read.getLine());
     while(read.readLine()) {
       graph.addString(read.getLine());
-      if (++segments >= goal) {
-	goal += segments / 2;
-	//cout << graph.getString().size() << endl;
-      }
     }
-    cout << graph.getStr
+    genes.leergenes(graph.getString());
+  }
+  
+  while(read.readLine()) {
+    graph.addString(read.getLine());
+    if (goal > 0) {
+      goal--;
+    } else {
+      genes.leergenes(graph.getString());
+    }
+  }
+  
+  return 0;
+}
